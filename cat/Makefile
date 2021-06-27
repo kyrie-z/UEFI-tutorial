@@ -1,4 +1,4 @@
-TARGET = ls.efi
+TARGET = cat.efi
 
 include ../base.mk
 

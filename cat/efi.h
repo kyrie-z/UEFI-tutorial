@@ -1,6 +1,11 @@
 #ifndef _EFI_H_
 #define _EFI_H_
 
+// 文件打开模式
+#define EFI_FILE_MODE_READ      0x0000000000000001
+#define EFI_FILE_MODE_WRITE     0x0000000000000002
+#define EFI_FILE_MODE_CREATE    0x8000000000000000
+
 struct EFI_INPUT_KEY {
     unsigned short ScanCode;
     unsigned short UnicodeChar;
