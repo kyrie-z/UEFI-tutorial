@@ -17,3 +17,4 @@ cat << EOF | unix2dos | iconv -f UTF-8 -t UCS-2LE > ./abc
         EOF
 ```
 
+通过LoadImage()加载的UEFI应用程序，它的可执行文件必须是一个可重定位目标文件(shared object), 在编译时加上-share
