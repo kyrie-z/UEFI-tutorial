@@ -100,7 +100,7 @@ void strncpy(unsigned short *dst, unsigned short *src, unsigned long long n)
 unsigned long long strlen(unsigned short *str)
 {
 	unsigned long long len =0;
-	while (*str++ != L"\0")
+	while (*str++ != L'\0')
 	{
 		len++;
 	}

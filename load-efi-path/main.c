@@ -10,7 +10,8 @@ void efi_main(void *ImageHandle, struct EFI_SYSTEM_TABLE *SystemTable)
     struct EFI_DEVICE_PATH_PROTOCOL *dev_path_merged;
 	struct EFI_LOADED_IMAGE_PROTOCOL *lip_bzimage;
 	void *image;
-	unsigned short options[] = L"root=/dev/sdb init=/bin/sh rootwait";  //传参
+	unsigned short options[] = L"root=/dev/sdb rootwait";  //传参
+	//root=...告诉内核使用哪个设备作为根文件系统, init=...告诉内核在启动后执行哪个程序
 
     SystemTable->ConOut->ClearScreen(SystemTable->ConOut);
     efi_init(SystemTable);
