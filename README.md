@@ -17,6 +17,21 @@ cat << EOF | unix2dos | iconv -f UTF-8 -t UCS-2LE > ./abc
         EOF
 ```
 
+
+apt install gcc-mingw-w64-x86-64  交叉编译工具，将UEFI可以执行的PE32+格式
+
+编译参数 -Wall -Wextra -e efi_main -nostdinc -nostdlib -shared -fno-builtin -Wl,--subsystem,10 
+
+-e 指定函数入口
+--subsystem，10 告诉编译器将生成的可执行文件类型设置为UEFI应用程序
+
+
+
+efi shell:
+map -r命令列出所有的被UEFI识别的文件系统
+使用fs#:命令进入某个文件系统
+
+
 通过LoadImage()加载的UEFI应用程序，它的可执行文件必须是一个可重定位目标文件(shared object), 在编译时加上-share
 
 
