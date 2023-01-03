@@ -1,0 +1,3 @@
+启动tpm 虚拟机
+	swtpm socket  --tpm2 --tpmstate dir=./emulated_tpm --ctrl type=unixio,path=./emulated_tpm/swtpm-sock --log level=20
+	kvm --bios /usr/share/ovmf/OVMF.fd -hda fat:rw:. -net none -chardev socket,id=chrtpm,path=/home/uos/virtOS/emulated_tpm/swtpm-sock -tpmdev emulator,id=tpm1,chardev=chrtpm -device tpm-tis,tpmdev=tpm1
